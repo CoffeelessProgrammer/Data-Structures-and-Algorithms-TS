@@ -1,4 +1,4 @@
-// Problem: Given an array of unordered numbers and a sum,
+// Challenge: Given an array of unordered numbers and a sum,
 //   is there a pair of numbers which add up to the sum?
 
 
