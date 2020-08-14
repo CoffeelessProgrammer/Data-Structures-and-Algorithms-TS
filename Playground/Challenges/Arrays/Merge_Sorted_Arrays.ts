@@ -13,32 +13,27 @@ function mergeSortedArrays(arr1: number[], arr2: number[]): Array<number> {   //
   for(let i=0,j=0; i <= arr1.length && j <= arr2.length;) {
 
     if (i === arr1.length && j === arr2.length) {
-      // console.log("Processed both arrays!")
       break;
     }
 
     if (i === arr1.length) {
       largeSorted.push(arr2[j]);
       ++j;
-      // console.log('Pushing', largeSorted[largeSorted.length-1], '   New j:', j);
       continue;
     }
 
     if (j === arr2.length) {
       largeSorted.push(arr1[i]);
       ++i;
-      // console.log('Pushing', largeSorted[largeSorted.length-1], '   New i:', i);
       continue;
     }
 
     if (arr1[i] < arr2[j]) {
       largeSorted.push(arr1[i]);
       ++i;
-      // console.log('Pushing', largeSorted[largeSorted.length-1], '   New i:', i);
     } else {
       largeSorted.push(arr2[j])
       ++j;
-      // console.log('Pushing', largeSorted[largeSorted.length-1], '   New j:', j);
     }
   }
 
