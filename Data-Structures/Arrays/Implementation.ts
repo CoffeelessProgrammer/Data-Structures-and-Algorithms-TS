@@ -2,7 +2,7 @@
 
 type NumIndexedObject = { [index: number]: any };
 
-class MyArray<T> {
+export class MyArray<T> {
 
   public length: number;
   private data: NumIndexedObject;
@@ -83,39 +83,43 @@ class MyArray<T> {
 
 
 
-let helloArray = new MyArray<string>();
+//---------------------------------------------------------------------
+// ----------                 MAIN PROGRAM                   ----------
+//---------------------------------------------------------------------
+if (import.meta.main) {
 
-helloArray.push('Hello');   // O(1)
-helloArray.push('world');
-console.log(helloArray);
+  let helloArray = new MyArray<string>();
 
-helloArray.pop();           // O(1)
-console.log(helloArray);
+  helloArray.push('Hello');   // O(1)
+  helloArray.push('world');
+  console.log(helloArray);
 
-helloArray.push('Deno');
-helloArray.push('!');
-console.log(helloArray);
+  helloArray.pop();           // O(1)
+  console.log(helloArray);
 
-console.log('At index 2:', helloArray.get(2));
+  helloArray.push('Deno');
+  helloArray.push('!');
+  console.log(helloArray);
 
-// -------------------------------------------
+  console.log('At index 2:', helloArray.get(2));
 
-let sokka = new MyArray<string>();
+  // -------------------------------------------
 
-sokka.push('s');
-sokka.push('o');
-sokka.push('c');
-sokka.push('k');
-sokka.push('a');
-console.log(sokka);
+  let sokka = new MyArray<string>();
 
-console.log('Element deleted:', sokka.deleteIndex(2));  // O(n)
-console.log(sokka);
+  sokka.push('s');
+  sokka.push('o');
+  sokka.push('c');
+  sokka.push('k');
+  sokka.push('a');
+  console.log(sokka);
 
-sokka.insertItemAtIndex(2, 'k');  // O(n)
-console.log(sokka);
+  console.log('Element deleted:', sokka.deleteIndex(2));  // O(n)
+  console.log(sokka);
 
-
+  sokka.insertItemAtIndex(2, 'k');  // O(n)
+  console.log(sokka);
+}
 
 // --------------------------- Terminal Output: ---------------------------
 // MyArray { length: 2, data: { 0: "Hello", 1: "world" } }

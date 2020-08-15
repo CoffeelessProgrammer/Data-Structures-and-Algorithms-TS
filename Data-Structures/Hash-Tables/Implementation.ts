@@ -1,6 +1,6 @@
 // RUN: deno run Data-Structures/Hash-Tables/Implementation.ts
 
-class HashTable {
+export class HashTable {
   private size: number;
   private data: Array<Array<any>>;
 
@@ -80,21 +80,27 @@ class HashTable {
   }
 
   public testHashFunction() {
-    console.log(hashTable._hash('grapes'));
-    console.log(hashTable._hash('grapess'));
-    console.log(hashTable._hash('grapes'));
+    console.log(this._hash('grapes'));
+    console.log(this._hash('grapess'));
+    console.log(this._hash('grapes'));
   }
 }
 
-const hashTable = new HashTable(16);
-// hashTable.testHashFunction();
+//---------------------------------------------------------------------
+// ----------                 MAIN PROGRAM                   ----------
+//---------------------------------------------------------------------
+if (import.meta.main) {
 
-hashTable.set('grapes', 27);
-hashTable.set('apples', 6);
-hashTable.set('tangerines', 12);
+  const hashTable = new HashTable(16);
+  // hashTable.testHashFunction();
 
-console.log('apples:', hashTable.get('apples'));
-console.log('grapes:', hashTable.get('grapes'));
+  hashTable.set('grapes', 27);  // Θ(1)
+  hashTable.set('apples', 6);
+  hashTable.set('tangerines', 12);
 
-console.log(hashTable.keys());
-console.log(hashTable.values());
+  console.log('apples:', hashTable.get('apples'));
+  console.log('grapes:', hashTable.get('grapes'));
+
+  console.log(hashTable.keys());
+  console.log(hashTable.values());
+}
