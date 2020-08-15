@@ -1,4 +1,4 @@
-// RUN:   deno run Data-Structures/Arrays/My_Array_Implementation.ts
+// RUN:   deno run Data-Structures/Arrays/Implementation.ts
 
 type NumIndexedObject = { [index: number]: any };
 
