@@ -9,7 +9,7 @@ export class HashTable {
     this.data = new Array(numBuckets);
   }
 
-  public set(key: string, value: any): void {
+  public insert(key: string, value: any): void {
     let address = this._hash(key);
 
     if (!this.data[address]) {
@@ -94,9 +94,9 @@ if (import.meta.main) {
   const hashTable = new HashTable(16);
   // hashTable.testHashFunction();
 
-  hashTable.set('grapes', 27);  // Θ(1)
-  hashTable.set('apples', 6);
-  hashTable.set('tangerines', 12);
+  hashTable.insert('grapes', 27);  // Θ(1)
+  hashTable.insert('apples', 6);
+  hashTable.insert('tangerines', 12);
 
   console.log('apples:', hashTable.get('apples'));
   console.log('grapes:', hashTable.get('grapes'));

@@ -1,4 +1,4 @@
-import { assertEquals, assertNotEquals } from "../../test_deps.ts";
+import { assertEquals, assertNotEquals } from "../../../test_deps.ts";
 
 import { containsCommonItem } from "./Compare_Arrays.ts";
 

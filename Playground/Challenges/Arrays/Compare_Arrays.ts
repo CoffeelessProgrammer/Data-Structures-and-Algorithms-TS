@@ -51,12 +51,16 @@ export function containsCommonItemSyntacticSugar(arr1: Array<string>, arr2: Arra
   return arr1.some(item => arr2.includes(item));
 }
 
-const array1 = ['a', 'b', 'c', 'x'];
-const array2 = ['z', 'y', 'x'];
-const array3 = ['z', 'y', 'i'];
 
-console.log(containsCommonItemBF(array1, array2));  // O(a*b)
-console.log(containsCommonItemBF(array1, array3));  // O(a*b)
 
-console.log(containsCommonItem(array1, array2));    // O(a+b)
-console.log(containsCommonItem(array1, array3));    // O(a+b)
+if (import.meta.main) {
+  const array1 = ['a', 'b', 'c', 'x'];
+  const array2 = ['z', 'y', 'x'];
+  const array3 = ['z', 'y', 'i'];
+
+  console.log(containsCommonItemBF(array1, array2));  // O(a*b)
+  console.log(containsCommonItemBF(array1, array3));  // O(a*b)
+
+  console.log(containsCommonItem(array1, array2));    // O(a+b)
+  console.log(containsCommonItem(array1, array3));    // O(a+b)
+}
