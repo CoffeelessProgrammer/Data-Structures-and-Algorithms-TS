@@ -10,8 +10,9 @@
 ### Data Structures
 - [X] Arrays
 - [X] Hash Tables
+- [ ] Stacks
+- [ ] Queues
 - [ ] Linked Lists
-- [ ] Stacks & Queues
 - [ ] Trees
   - [ ] Binary Search Tree (BST)
   - [ ] AVL Tree
@@ -23,13 +24,18 @@
 
 ### Algorithms
 - [ ] Recursion
-- [ ] Sorting
+- [ ] Dynamic Programming
+- [ ] Comparison Sorting
+  - [ ] *Merge Sort*
+  - [ ] *Quick Sort*
+  - [ ] Bubble Sort
+  - [ ] Selection Sort
+  - [ ] Insertion Sort
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary Search
   - [ ] Breadth First Search (BFS)
   - [ ] Depth First Search (DFS)
-- [ ] Dynamic Programming
 
 ## Environment
 - Deno 1.2.1
@@ -38,3 +44,4 @@
 
 ## Resources
 - [The Data Structures Handbook](https://www.thedshandbook.com/ "DS Handbook")
+- [Comprehensive List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures "Wikipedia: DS List")
