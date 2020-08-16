@@ -3,23 +3,33 @@
 ## Topics
 
 ### Algorithmic Complexity Analysis
-- Big O Notation
-- Time Complexity
-- Space Complexity
+- [X] Big O Notation
+- [X] Time Complexity
+- [X] Space Complexity
 
 ### Data Structures
-- Arrays
-- Hash Tables
-- Linked Lists
-- Stacks & Queues
-- Trees & Tries
-- Graphs
+- [X] Arrays
+- [X] Hash Tables
+- [ ] Linked Lists
+- [ ] Stacks & Queues
+- [ ] Trees
+  - [ ] Binary Search Tree (BST)
+  - [ ] AVL Tree
+  - [ ] Red Black Tree
+  - [ ] Binary Heap
+    - Priority Queue
+  - [ ] Trie
+- [ ] Graphs
 
 ### Algorithms
-- Recursion
-- Sorting
-- Searching (incl. BFS & DFS)
-- Dynamic Programming
+- [ ] Recursion
+- [ ] Sorting
+- [ ] Searching
+  - [ ] Linear Search
+  - [ ] Binary Search
+  - [ ] Breadth First Search (BFS)
+  - [ ] Depth First Search (DFS)
+- [ ] Dynamic Programming
 
 ## Environment
 - Deno 1.2.1
