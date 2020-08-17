@@ -12,6 +12,10 @@ export default class StackLL<T> {
     this.length = 0;
   }
 
+  public getLength(): number {
+    return this.length;
+  }
+
   public peek(): T | null {
     return this.top?.getValue() || null;
   }
@@ -50,7 +54,7 @@ export default class StackLL<T> {
     const value = this.top.getValue();    // Retrieve top value of stack
     this.top = this.top.getNext();        // Move top pointer to next node
 
-    // On line 46, the reference to the top most node of the stack is lost
+    // On line 55, the reference to the top most node of the stack is lost
     // The node is now floating in memory, waiting patiently for the garbage collector
 
     --this.length;
