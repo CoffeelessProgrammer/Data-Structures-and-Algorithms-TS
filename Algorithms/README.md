@@ -16,3 +16,4 @@
   - [ ] Depth First Search (DFS)
 
 ## Resources
+- [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
