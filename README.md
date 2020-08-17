@@ -13,7 +13,7 @@
 - [ ] Stacks
 - [ ] Queues
 - [ ] Linked Lists
-- [ ] Trees
+- [X] Trees
 - [ ] Graphs
 
 ### Algorithms
@@ -33,6 +33,7 @@
 - TypeScript 3.9.2
 
 ## Resources
-- [Data Structures & Algorithms: Course Overview](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link "Course and Mindmap by Andrei Neagoie")
 - [Comprehensive List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures "Wikipedia: DS List")
+- [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
 - [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
+- [Roadmap: Core Data Structures & Algorithms](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link "Course and Mindmap by Andrei Neagoie")

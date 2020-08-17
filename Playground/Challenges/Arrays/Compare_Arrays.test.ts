@@ -10,6 +10,8 @@ const array3 = ['z', 't', 'i'];
 // ----------                  UNIT TESTS                    ----------
 //---------------------------------------------------------------------
 
+//    RUN: deno test Playground/Challenges/Arrays/Compare_Arrays.test.ts
+
 Deno.test({
     name: "Matching Elements 1",
     fn() {
