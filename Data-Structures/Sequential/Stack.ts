@@ -11,6 +11,10 @@ export default class Stack<T> {
     return this.length;
   }
 
+  public isEmpty(): boolean {
+    return this.length === 0;
+  }
+
   public peek(): T | null {
     return this.values[this.length-1] || null;
   }

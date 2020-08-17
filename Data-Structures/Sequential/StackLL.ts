@@ -16,6 +16,10 @@ export default class StackLL<T> {
     return this.length;
   }
 
+  public isEmpty(): boolean {
+    return this.length === 0;
+  }
+
   public peek(): T | null {
     return this.top?.getValue() || null;
   }
