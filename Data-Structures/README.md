@@ -3,8 +3,8 @@
 ## Core
 - [X] Arrays
 - [X] Hash Tables
-- [ ] Stacks
-- [ ] Queues
+- [X] Stacks
+- [X] Queues
 - [ ] Linked Lists
 - [X] Trees
   - [X] Binary Search Tree (BST)

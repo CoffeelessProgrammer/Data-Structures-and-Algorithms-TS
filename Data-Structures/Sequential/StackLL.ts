@@ -107,3 +107,16 @@ if (import.meta.main) {
 
   // RUN: deno run Data-Structures/Sequential/StackLL.ts
 }
+
+
+// --------------------------- Terminal Output: ---------------------------
+// Peeking: null
+// Peeking: Katara
+// {"top":{"value":"Appa","next":{"value":"Aang","next":{"value":"Katara","next":{"value":"Sokka","next":null}}}},"bottom":{"value":"Sokka","next":null},"length":4}      
+// Popped: Appa
+// {"top":{"value":"Aang","next":{"value":"Katara","next":{"value":"Sokka","next":null}}},"bottom":{"value":"Sokka","next":null},"length":3}
+// Popped: Aang
+// Popped: Katara
+// Popped: Sokka
+// {"top":null,"bottom":null,"length":0}
+// {"top":{"value":"Iroh","next":{"value":"Zuko","next":null}},"bottom":{"value":"Zuko","next":null},"length":2}

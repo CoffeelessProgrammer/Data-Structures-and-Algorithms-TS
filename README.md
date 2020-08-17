@@ -10,8 +10,8 @@
 ### Data Structures
 - [X] Arrays
 - [X] Hash Tables
-- [ ] Stacks
-- [ ] Queues
+- [X] Stacks
+- [X] Queues
 - [ ] Linked Lists
 - [X] Trees
 - [ ] Graphs

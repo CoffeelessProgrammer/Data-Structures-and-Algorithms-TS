@@ -74,3 +74,16 @@ if (import.meta.main) {
 
   // RUN: deno run Data-Structures/Sequential/Stack.ts
 }
+
+
+// --------------------------- Terminal Output: ---------------------------
+// Peeking... Found null
+// Peeking... Found Katara
+// {"length":4,"values":["Sokka","Katara","Aang","Appa"]}
+// Popped: Appa
+// {"length":3,"values":["Sokka","Katara","Aang",null]}
+// Popped: Aang
+// Popped: Katara
+// Popped: Sokka
+// {"length":0,"values":[null,null,null,null]}
+// {"length":2,"values":["Zuko","Iroh",null,null]}
