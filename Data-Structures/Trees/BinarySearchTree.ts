@@ -13,8 +13,6 @@ export default class BinarySearchTree {
   }
 
   public insert(value: number) {
-    // TODO: Insert value into BST
-
     // If empty tree, create root
     if(this.root === null) {
       this.root = new BNode(value);
@@ -50,8 +48,35 @@ export default class BinarySearchTree {
   }
 
   public lookup(value: number) {
-    // TODO: Find value in BST
-    console.log("Lookup not implemented");
+    let currentNode: BNode;
+
+    if(!!this.root) {
+      currentNode = this.root;
+    } else {
+      return null;
+    }
+
+    while(true) {
+      // We found our value!
+      if (value === currentNode.getValue()) {
+        return currentNode;
+      }
+
+      
+      if (value < currentNode.getValue()) {         // Value is smaller than current node
+        if(!!currentNode.getLeft()) {               // If left child exists
+          currentNode = currentNode.getLeft();      // Move into left child
+          continue;
+        }
+        return null;  // No left child, value DNE
+      } else {                                      // Value is greater than current node
+        if(!!currentNode.getRight()) {              // If right child exists
+          currentNode = currentNode.getRight();     // Move into right child
+          continue;
+        }
+        return null;  // No right child, value DNE
+      }
+    }
   }
 
   public remove(value: number) {
@@ -88,7 +113,16 @@ if (import.meta.main) {
   tree.insert(170);
   tree.insert(15);
   tree.insert(1);
-  console.log(JSON.stringify(traverseFrom(tree.getRoot())));
+  console.log('Tree: ', JSON.stringify(traverseFrom(tree.getRoot())));
+  printNode(tree, 4);
+  printNode(tree, 17);
+  printNode(tree, 40);
+  printNode(tree, 170);
 
   // RUN: deno run Data-Structures/Trees/BinarySearchTree.ts
+}
+
+function printNode(tree: BinarySearchTree, value: number): void {
+  const requestedNode = tree.lookup(value);
+  console.log('Find', value + ':', !!requestedNode ? JSON.stringify(requestedNode) : 'Node not found.');
 }
