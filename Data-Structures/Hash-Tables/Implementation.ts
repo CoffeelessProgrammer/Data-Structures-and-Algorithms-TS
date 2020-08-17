@@ -1,5 +1,3 @@
-// RUN: deno run Data-Structures/Hash-Tables/Implementation.ts
-
 export class HashTable {
   private size: number;
   private data: Array<Array<any>>;
@@ -103,4 +101,6 @@ if (import.meta.main) {
 
   console.log(hashTable.keys());
   console.log(hashTable.values());
+
+  // RUN: deno run Data-Structures/Hash-Tables/Implementation.ts
 }

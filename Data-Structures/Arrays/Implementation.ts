@@ -1,5 +1,3 @@
-// RUN:   deno run Data-Structures/Arrays/Implementation.ts
-
 type NumIndexedObject = { [index: number]: any };
 
 export class MyArray<T> {
@@ -119,6 +117,8 @@ if (import.meta.main) {
 
   sokka.insertItemAtIndex(2, 'k');  // O(n)
   console.log(sokka);
+
+  // RUN:   deno run Data-Structures/Arrays/Implementation.ts
 }
 
 // --------------------------- Terminal Output: ---------------------------
