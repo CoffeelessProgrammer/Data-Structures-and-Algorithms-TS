@@ -1,6 +1,6 @@
 # Data Structures & Algorithms in TypeScript
 
-## Topics
+## Topics Overview
 
 ### Algorithmic Complexity Analysis
 - [X] Big O Notation
@@ -14,12 +14,6 @@
 - [ ] Queues
 - [ ] Linked Lists
 - [ ] Trees
-  - [ ] Binary Search Tree (BST)
-  - [ ] AVL Tree
-  - [ ] Red Black Tree
-  - [ ] Binary Heap
-    - Priority Queue
-  - [ ] Trie
 - [ ] Graphs
 
 ### Algorithms
@@ -28,14 +22,10 @@
 - [ ] Comparison Sorting
   - [ ] *Merge Sort*
   - [ ] *Quick Sort*
-  - [ ] Bubble Sort
-  - [ ] Selection Sort
-  - [ ] Insertion Sort
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary Search
-  - [ ] Breadth First Search (BFS)
-  - [ ] Depth First Search (DFS)
+  - [ ] BFS & DFS
 
 ## Environment
 - Deno 1.2.1
@@ -43,5 +33,6 @@
 - TypeScript 3.9.2
 
 ## Resources
-- [The Data Structures Handbook](https://www.thedshandbook.com/ "DS Handbook")
+- [Data Structures & Algorithms: Course Overview](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link "Course and Mindmap by Andrei Neagoie")
 - [Comprehensive List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures "Wikipedia: DS List")
+- [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
