@@ -21,7 +21,8 @@
 - [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
 
 ### Trees
-- [BST: VisuAlgo](https://visualgo.net/bn/bst?slide=1)
+- [Linked List: VisuAlgo](https://visualgo.net/en/list)
+- [Binary Search Tree: VisuAlgo](https://visualgo.net/bn/bst?slide=1)
 - [Binary Heap: VisuAlgo](https://visualgo.net/en/heap)
 - [AVL Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
 - [Red-Black Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)

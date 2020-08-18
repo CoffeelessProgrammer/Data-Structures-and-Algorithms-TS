@@ -22,4 +22,12 @@ export default class LinkedListNode<T> {
   public getNext(): LinkedListNode<T> | any {
     return this.next;
   }
+
+  public hasNext(): boolean {
+    return !!this.next;
+  }
+
+  public toString(): string {
+    return `{ value: ${JSON.stringify(this.value)}, next: ${!!this.next} }`;
+  }
 }
