@@ -1,6 +1,6 @@
 type NumIndexedObject = { [index: number]: any };
 
-export class MyArray<T> {
+export default class MyArray<T> {
 
   public length: number;
   private data: NumIndexedObject;
@@ -10,6 +10,11 @@ export class MyArray<T> {
     this.data = Object.create({});
   }
 
+  /**
+   * Get element at given index.
+   * @param index Index of value to return
+   * @returns Value, or null if non-existant
+   */
   public get(index: number): T | null {
     if(index > 0 && index < this.length) {
       return this.data[index];
@@ -18,6 +23,11 @@ export class MyArray<T> {
     return null;
   }
 
+  /**
+   * Add element to end of array,i.e. at index Array.length.
+   * @param item Value/object to push
+   * @returns Length of array after push
+   */
   public push(item: T): number {
     this.data[this.length] = item;  // Add item to end of array
     ++this.length;                  // Add 1 to array length
@@ -25,6 +35,10 @@ export class MyArray<T> {
     return this.length;
   }
 
+  /**
+   * Remove the last element of array.
+   * @returns Value/object at last index, or null if empty array
+   */
   public pop(): T | null {
     if(this.length > 0) {
       const lastItem = this.data[this.length-1];  // Retrieve last item
@@ -37,11 +51,16 @@ export class MyArray<T> {
     return null;
   }
 
+  /**
+   * Delete item at given index.
+   * @param index Numerical position to delete
+   * @returns Value/object at index, or null if empty array
+   */
   public deleteIndex(index: number): T | null {
-    if(index > 0 && index < this.length) {
+    if(index >= 0 && index < this.length) {
 
       const requestedItem = this.data[index];
-      this.shiftItemsLeftAfterIndex(index);
+      this._shiftItemsLeftAfterIndex(index);
 
       return requestedItem;
     }
@@ -49,9 +68,15 @@ export class MyArray<T> {
     return null;
   }
 
+  /**
+   * Insert a given value (item) at specified index
+   * @param index Numerical position to insert at
+   * @param item Value/object to insert
+   * @returns Length of array after insertion, or null if failed insertion
+   */
   public insertItemAtIndex(index: number, item: T): number | null {
-    if(index > 0 && index < this.length) {
-      this.shiftItemsRightAtIndex(index);
+    if(index >= 0 && index < this.length) {
+      this._shiftItemsRightAtIndex(index);
       this.data[index] = item;
       return this.length;
     }
@@ -59,7 +84,7 @@ export class MyArray<T> {
     return null;
   }
 
-  private shiftItemsLeftAfterIndex(index: number): void {
+  private _shiftItemsLeftAfterIndex(index: number): void {
     for (let i=index; i < this.length-1; ++i) {
       this.data[i] = this.data[i+1];
     }
@@ -68,7 +93,7 @@ export class MyArray<T> {
     delete this.data[this.length];
   }
 
-  private shiftItemsRightAtIndex(index: number): void {
+  private _shiftItemsRightAtIndex(index: number): void {
     ++this.length;
 
     for (let i=this.length-1; i > index; --i) {
