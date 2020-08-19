@@ -19,6 +19,16 @@ export default class LinkedList<T> {
     return this.length === 0;
   }
 
+  /**
+   * Remove all nodes from list. Constant Time O(1)
+   */
+  public empty(): boolean {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+    return true;
+  }
+
   public append(value: T): boolean {
     const newNode = new Node(value);
 
@@ -61,17 +71,11 @@ export default class LinkedList<T> {
       return true;
     }
 
-
     const newNode = new Node(value);
 
-    let currentNode: Node<T> = this.head;
-
-    for (let i=0; i < atIndex-1; ++i) {
-      currentNode = currentNode.getNext();
-    }
-
-    newNode.setNext(currentNode.getNext());
-    currentNode.setNext(newNode);
+    let currentNode = this._traverseToNode(atIndex-1);
+    newNode.setNext(currentNode?.getNext());
+    currentNode?.setNext(newNode);
 
     ++this.length;
 
@@ -86,22 +90,14 @@ export default class LinkedList<T> {
 
     if (index===0) {
       value = this.head.getValue();
-      this.head = this.head.getNext();
+      this.head = this.head.getNext();                // Manipulate pointers to mark deleted Node for garbage collection
     }
     else {
-      let currentNode = this.head;
-
-      for (let i=0; i < index; ++i) {                           // Traverse linked list to find Node index-1
-        if (i===index-1) {
-          value = currentNode.getNext().getValue();             // Store Node value
-          break;
-        }
-        currentNode = currentNode.getNext();
-      }
-      currentNode.setNext(currentNode.getNext().getNext());     // Manipulate pointers to mark deleted Node for garbage collection
+      let leader = this._traverseToNode(index-1);
+      value = leader?.getNext().getValue();
+      leader?.setNext(leader.getNext().getNext());    // Manipulate pointers to mark deleted Node for garbage collection
     }
-
-    --this.length;                                              // Decrement length
+    --this.length;                                    // Decrement length
 
     return value;
   }
@@ -111,14 +107,8 @@ export default class LinkedList<T> {
     if (this.length === 0 || !this.head || !this.tail) return null;     // Verify that list is not empty
     if (index === this.length-1) return this.tail.getValue();           // Optimization when retrieving last element
 
-    let currentNode = this.head;
-
-    for (let i=0; i <= index; ++i) {
-      if (i===index) return currentNode.getValue();
-      currentNode = currentNode.getNext();
-    }
-
-    return null;
+    let targetNode = this._traverseToNode(index);
+    return targetNode?.getValue() || null;
   }
 
   /**
@@ -139,14 +129,16 @@ export default class LinkedList<T> {
     return null;
   }
 
-  /**
-   * Remove all nodes from list. Constant Time O(1)
-   */
-  public empty(): boolean {
-    this.head = null;
-    this.tail = null;
-    this.length = 0;
-    return true;
+  private _traverseToNode(index: number): Node<T> | null {
+    if (!this.head) return null;
+
+    let currentNode = this.head;
+
+    for (let i=0; i<index; ++i) {
+      currentNode = currentNode.getNext();
+    }
+
+    return currentNode;
   }
 
   public toString(nodesPerGroup?: number): string {
@@ -154,7 +146,7 @@ export default class LinkedList<T> {
       return "";
     }
     
-    nodesPerGroup = nodesPerGroup ? nodesPerGroup : 8;
+    nodesPerGroup = nodesPerGroup ? nodesPerGroup : 6;
 
     const LABEL_HEAD = 'HEAD';
     const LABEL_TAIL = 'TAIL';
@@ -163,7 +155,7 @@ export default class LinkedList<T> {
     let currentNode: Node<any> = this.head;
 
     for (let i=0; i < this.length; ++i) {
-      listAsString += `${Array(i%nodesPerGroup).fill('\t').join('')} ${i===0 ? LABEL_HEAD : '–'} ${currentNode} ${i===this.length-1 ? LABEL_TAIL : ''}\n`;
+      listAsString += `${Array(i%nodesPerGroup).fill('\t').join('')} ${i===0 ? LABEL_HEAD : i} ${currentNode} ${i===this.length-1 ? LABEL_TAIL : ''}\n`;
   
       if (currentNode.hasNext()) {
         currentNode = currentNode.getNext();
@@ -249,16 +241,16 @@ if (import.meta.main) {
 // --------------------------- Terminal Output: ---------------------------
 // --- Node Count: 3
 //  HEAD { value: "Appa", next: true }
-//          – { value: "Sokka", next: true }
-//                  – { value: "Katara", next: false } TAIL
-//
+//          1 { value: "Sokka", next: true }
+//                  2 { value: "Katara", next: false } TAIL
+
 // --- Node Count: 6
 //  HEAD { value: "Appa", next: true }
-//          – { value: "Zuko", next: true }
-//                  – { value: "Sokka", next: true }
-//                          – { value: "Aang", next: true }
-//                                  – { value: "Iroh", next: true }
-//                                          – { value: "Katara", next: false } TAIL
+//          1 { value: "Zuko", next: true }
+//                  2 { value: "Sokka", next: true }
+//                          3 { value: "Aang", next: true }
+//                                  4 { value: "Iroh", next: true }
+//                                          5 { value: "Katara", next: false } TAIL
 //
 // "Iroh" found at index: 4
 // "Sok" found at index: null
@@ -271,28 +263,28 @@ if (import.meta.main) {
 // Removing element at index 1: "Zuko"
 // --- Node Count: 5
 //  HEAD { value: "Appa", next: true }
-//          – { value: "Sokka", next: true }
-//                  – { value: "Aang", next: true }
-//                          – { value: "Iroh", next: true }
-//                                  – { value: "Katara", next: false } TAIL
+//          1 { value: "Sokka", next: true }
+//                  2 { value: "Aang", next: true }
+//                          3 { value: "Iroh", next: true }
+//                                  4 { value: "Katara", next: false } TAIL
 //
 // Removing element at index 0: "Appa"
 // --- Node Count: 4
 //  HEAD { value: "Sokka", next: true }
-//          – { value: "Aang", next: true }
-//                  – { value: "Iroh", next: true }
-//                          – { value: "Katara", next: false } TAIL
+//          1 { value: "Aang", next: true }
+//                  2 { value: "Iroh", next: true }
+//                          3 { value: "Katara", next: false } TAIL
 //
 // Removing element at index 2: "Iroh"
 // --- Node Count: 3
 //  HEAD { value: "Sokka", next: true }
-//          – { value: "Aang", next: true }
-//                  – { value: "Katara", next: false } TAIL
+//          1 { value: "Aang", next: true }
+//                  2 { value: "Katara", next: false } TAIL
 //
 // Removing element at index 2: "Katara"
 // --- Node Count: 2
 //  HEAD { value: "Sokka", next: true }
-//          – { value: "Aang", next: false } TAIL
+//          1 { value: "Aang", next: false } TAIL
 //
 // Removing element at index 1: "Aang"
 // Removing element at index 0: "Sokka"
@@ -303,4 +295,4 @@ if (import.meta.main) {
 //
 // --- Node Count: 2
 //  HEAD { value: "Katara", next: true }
-//          – { value: "Aang", next: false } TAIL
+//          1 { value: "Aang", next: false } TAIL
