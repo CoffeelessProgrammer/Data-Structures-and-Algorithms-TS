@@ -5,7 +5,7 @@
 - [X] Hash Tables
 - [X] Stacks
 - [X] Queues
-- [ ] Linked Lists
+- [X] Linked Lists
 - [X] Trees
   - [X] Binary Search Tree (BST)
     - AVL Tree
@@ -20,8 +20,11 @@
 - [Comprehensive List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures "Wikipedia: DS List")
 - [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
 
-### Trees
+### Foundations
+- [Arrays vs Linked Lists: Youtube](https://youtu.be/DyG9S9nAlUM)
 - [Linked List: VisuAlgo](https://visualgo.net/en/list)
+
+### Trees
 - [Binary Search Tree: VisuAlgo](https://visualgo.net/bn/bst?slide=1)
 - [Binary Heap: VisuAlgo](https://visualgo.net/en/heap)
 - [AVL Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)

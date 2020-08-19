@@ -273,9 +273,9 @@ if (import.meta.main) {
   ATLA.removeElementAtIndex(0, true);
   ATLA.removeElementAtIndex(1, true);
   ATLA.removeElementAtIndex(0, true);
-  console.log('----------------------------------');
-
   printLinkedList(ATLA);
+  
+  console.log('----------------------------------');
   console.log();
 
   ATLA.insert('Katara', 0, true);
@@ -359,8 +359,8 @@ if (import.meta.main) {
 // Removing element at index 1: "Sokka"
 // Removing element at index 0: "Zuko"
 // Removing element at index 0: "Iroh"
-// ----------------------------------
 // Empty linked list -_-
+// ----------------------------------
 //
 // --------- Prepending Katara ---------
 // --- Node Count: 1

@@ -11,7 +11,7 @@ export default class LinkedListNode<T> {
     this.value = value;
   }
 
-  public setNext(nextNode: LinkedListNode<T>) {
+  public setNext(nextNode: LinkedListNode<T> | null) {
     this.next = nextNode;
   }
 

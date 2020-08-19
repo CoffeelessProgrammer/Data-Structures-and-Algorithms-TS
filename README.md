@@ -12,7 +12,7 @@
 - [X] Hash Tables
 - [X] Stacks
 - [X] Queues
-- [ ] Linked Lists
+- [X] Linked Lists
 - [X] Trees
 - [ ] Graphs
 

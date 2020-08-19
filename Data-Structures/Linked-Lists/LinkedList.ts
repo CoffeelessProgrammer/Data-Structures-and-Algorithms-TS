@@ -141,6 +141,31 @@ export default class LinkedList<T> {
     return currentNode;
   }
 
+  public reverse(): boolean {
+    if (this.length < 2 || !this.head || !this.tail) return false;
+
+    this.tail = this.head;                // Current head will become the new tail
+
+    let first = this.head;
+    let second = first.getNext();
+    let tempNode;                         // Will be the third sequential node in deletion sequence
+
+    // Travel up the tree while the second node is present, i.e. not null
+    while(second) {
+      tempNode = second.getNext();
+
+      second.setNext(first);
+
+      first = second;
+      second = tempNode;
+    }
+
+    this.tail.setNext(null);
+    this.head = first;
+
+    return true;
+  }
+
   public toString(nodesPerGroup?: number): string {
     if (this.length === 0 || !this.head) {
       return "";
@@ -214,6 +239,11 @@ if (import.meta.main) {
   printSearchFor('Zuko', ATLA);
   printGetValueAtIndex(2, ATLA);
   printGetValueAtIndex(5, ATLA);
+
+  console.log('------------ Reversing List ------------');
+  ATLA.reverse();
+  printLinkedList(ATLA);
+
   console.log('----------------------------------');
 
   printRemoveIndex(1, ATLA);
@@ -234,6 +264,10 @@ if (import.meta.main) {
   ATLA.append('Aang');
   printLinkedList(ATLA);
 
+  console.log('------------ Reversing List ------------');
+  ATLA.reverse();
+  printLinkedList(ATLA);
+
   // RUN: deno run Data-Structures/Linked-Lists/LinkedList.ts
 }
 
@@ -243,7 +277,7 @@ if (import.meta.main) {
 //  HEAD { value: "Appa", next: true }
 //          1 { value: "Sokka", next: true }
 //                  2 { value: "Katara", next: false } TAIL
-
+//
 // --- Node Count: 6
 //  HEAD { value: "Appa", next: true }
 //          1 { value: "Zuko", next: true }
@@ -259,35 +293,44 @@ if (import.meta.main) {
 // "Zuko" found at index: 1
 // Element at index 2: Sokka
 // Element at index 5: Katara
-// ----------------------------------
-// Removing element at index 1: "Zuko"
-// --- Node Count: 5
-//  HEAD { value: "Appa", next: true }
-//          1 { value: "Sokka", next: true }
+// ------------ Reversing List ------------
+// --- Node Count: 6
+//  HEAD { value: "Katara", next: true }
+//          1 { value: "Iroh", next: true }
 //                  2 { value: "Aang", next: true }
-//                          3 { value: "Iroh", next: true }
-//                                  4 { value: "Katara", next: false } TAIL
+//                          3 { value: "Sokka", next: true }
+//                                  4 { value: "Zuko", next: true }
+//                                          5 { value: "Appa", next: false } TAIL
 //
-// Removing element at index 0: "Appa"
+// ----------------------------------
+// Removing element at index 1: "Iroh"
+// --- Node Count: 5
+//  HEAD { value: "Katara", next: true }
+//          1 { value: "Aang", next: true }
+//                  2 { value: "Sokka", next: true }
+//                          3 { value: "Zuko", next: true }
+//                                  4 { value: "Appa", next: false } TAIL
+//
+// Removing element at index 0: "Katara"
 // --- Node Count: 4
-//  HEAD { value: "Sokka", next: true }
-//          1 { value: "Aang", next: true }
-//                  2 { value: "Iroh", next: true }
-//                          3 { value: "Katara", next: false } TAIL
+//  HEAD { value: "Aang", next: true }
+//          1 { value: "Sokka", next: true }
+//                  2 { value: "Zuko", next: true }
+//                          3 { value: "Appa", next: false } TAIL
 //
-// Removing element at index 2: "Iroh"
+// Removing element at index 2: "Zuko"
 // --- Node Count: 3
-//  HEAD { value: "Sokka", next: true }
-//          1 { value: "Aang", next: true }
-//                  2 { value: "Katara", next: false } TAIL
+//  HEAD { value: "Aang", next: true }
+//          1 { value: "Sokka", next: true }
+//                  2 { value: "Appa", next: false } TAIL
 //
-// Removing element at index 2: "Katara"
+// Removing element at index 2: "Appa"
 // --- Node Count: 2
-//  HEAD { value: "Sokka", next: true }
-//          1 { value: "Aang", next: false } TAIL
+//  HEAD { value: "Aang", next: true }
+//          1 { value: "Sokka", next: false } TAIL
 //
-// Removing element at index 1: "Aang"
-// Removing element at index 0: "Sokka"
+// Removing element at index 1: "Sokka"
+// Removing element at index 0: "Aang"
 // Empty linked list -_-
 // ----------------------------------
 // --- Node Count: 1
@@ -296,3 +339,8 @@ if (import.meta.main) {
 // --- Node Count: 2
 //  HEAD { value: "Katara", next: true }
 //          1 { value: "Aang", next: false } TAIL
+//
+// ------------ Reversing List ------------
+// --- Node Count: 2
+//  HEAD { value: "Aang", next: true }
+//          1 { value: "Katara", next: false } TAIL
