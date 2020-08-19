@@ -1,4 +1,4 @@
-import Node from './NodeLL.ts';
+import Node from './SinglyNode.ts';
 
 export default class LinkedList<T> {
   private head: Node<T> | null;
@@ -103,7 +103,7 @@ export default class LinkedList<T> {
   }
 
   public getValueAtIndex(index: number): T | null {
-    if (index > this.length || index < 0) return null;                  // Validate input
+    if (index > this.length-1 || index < 0) return null;                  // Validate input
     if (this.length === 0 || !this.head || !this.tail) return null;     // Verify that list is not empty
     if (index === this.length-1) return this.tail.getValue();           // Optimization when retrieving last element
 
