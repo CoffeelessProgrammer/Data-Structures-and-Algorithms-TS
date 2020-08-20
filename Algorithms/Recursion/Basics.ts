@@ -1,8 +1,8 @@
 function inception(repeat: number): string {
   // 1. Base Case(s)
   if (repeat === 0) return 'Done!\n';         // Base Case(s) must be written first in method
-  // 2. Input Validation
-  if (repeat < 1) return 'Too small!\n';      // Input validation must occur after base case(s)
+  // 2?. Input Validation
+  if (repeat < 1) return 'Too small!\n';      // Input validation should occur after base case(s)
 
   console.log('Counter:', repeat);
 

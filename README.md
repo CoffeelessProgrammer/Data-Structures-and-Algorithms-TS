@@ -17,7 +17,7 @@
 - [X] Graphs
 
 ### Algorithms
-- [ ] Recursion
+- [X] Recursion
 - [ ] Dynamic Programming
 - [ ] Comparison Sorting
   - [ ] *Merge Sort*

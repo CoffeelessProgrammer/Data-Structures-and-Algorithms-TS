@@ -1,7 +1,7 @@
 # Algorithms
 
 ## Core
-- [ ] Recursion
+- [X] Recursion
 - [ ] Dynamic Programming
 - [ ] Comparison Sorting
   - [ ] *Merge Sort*
@@ -17,3 +17,6 @@
 
 ## Resources
 - [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
+
+### Recursion
+- [Tail Call Optimization: ES6](https://2ality.com/2015/06/tail-call-optimization.html)
