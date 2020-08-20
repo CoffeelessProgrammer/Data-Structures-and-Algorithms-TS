@@ -13,7 +13,7 @@
   - Binary Heap
     - Priority Queue
   - Trie
-- [ ] Graphs
+- [X] Graphs
 
 ## Resources
 - [The Data Structures Handbook](https://www.thedshandbook.com/ "DS Handbook")
@@ -23,6 +23,10 @@
 ### Foundations
 - [Arrays vs Linked Lists: Youtube](https://youtu.be/DyG9S9nAlUM)
 - [Linked List: VisuAlgo](https://visualgo.net/en/list)
+
+### Graphs
+- [The Internet Map](https://internet-map.net/)
+- [Graphs: VisuAlgo](https://visualgo.net/en/graphds)
 
 ### Trees
 - [Binary Search Tree: VisuAlgo](https://visualgo.net/bn/bst?slide=1)

@@ -14,7 +14,7 @@
 - [X] Queues
 - [X] Linked Lists
 - [X] Trees
-- [ ] Graphs
+- [X] Graphs
 
 ### Algorithms
 - [ ] Recursion
