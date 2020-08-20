@@ -1,3 +1,4 @@
+// RUN: deno run Playground/Demos/Objects_101.ts
 
 console.log('------------------------- Episode 1 -------------------------');
 const episode1 = {

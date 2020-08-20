@@ -1,4 +1,4 @@
-// RUN: deno run Playground/Classes_Demo.ts
+// RUN: deno run Playground/Demos/Classes_101.ts
 
 class Bender {
   protected name: string;
