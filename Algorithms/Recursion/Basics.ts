@@ -10,11 +10,17 @@ function inception(repeat: number): string {
   return inception(repeat-1);                 // The recursive call should return itself so the calculated value can bubble up
 }
 
-console.log(inception(5));
-console.log(inception(1));
-console.log(inception(-1));
+//---------------------------------------------------------------------
+// ----------                 MAIN PROGRAM                   ----------
+//---------------------------------------------------------------------
+if (import.meta.main) {
 
-// RUN:   deno run Algorithms/Recursion/Basics.ts
+  console.log(inception(5));
+  console.log(inception(1));
+  console.log(inception(-1));
+
+  // RUN:   deno run Algorithms/Recursion/Basics.ts
+}
 
 // --------------------------- Terminal Output: ---------------------------
 // Counter: 5
