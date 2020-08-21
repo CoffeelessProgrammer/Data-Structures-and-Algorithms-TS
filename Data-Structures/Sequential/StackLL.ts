@@ -1,4 +1,4 @@
-import Node from '../Linked-Lists/NodeLL.ts';
+import Node from '../Linked-Lists/SinglyNode.ts';
 
 
 export default class StackLL<T> {

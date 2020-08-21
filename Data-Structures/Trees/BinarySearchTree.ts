@@ -2,6 +2,19 @@ import BNode from './BinaryTreeNode.ts';
 
 
 export default class BinarySearchTree {
+
+  public static traverse(node: BNode | null) {
+    if(node === null) return;
+  
+    const tree = Object.create({});
+    tree.value = node.getValue();
+    tree.left = node.getLeft() === null ? null : this.traverse(node.getLeft());
+    tree.right = node.getRight() === null ? null : this.traverse(node.getRight());
+    return tree;
+  }
+
+  // ------------------- Instance Code Starts Here -------------------
+  
   private root: BNode | null;
 
   constructor() {
@@ -172,6 +185,26 @@ export default class BinarySearchTree {
     }
   }
 
+  public invertTree(): boolean {
+    if (!this.root) false;
+    this._invertNode(this.root);
+    return true;
+  }
+
+  private _invertNode(current: BNode | null) {
+    if (current === null) return;
+
+    this._swapChildren(current);
+    this._invertNode(current.getLeft());
+    this._invertNode(current.getRight());
+  }
+
+  private _swapChildren(node: BNode) {
+    const left = node.getLeft();
+    node.setLeft(node.getRight());
+    node.setRight(left);
+  }
+
   public equalsQuantum(tree: BinarySearchTree): boolean {
     return JSON.stringify(this) === JSON.stringify(tree);
   }
@@ -180,16 +213,6 @@ export default class BinarySearchTree {
 function printNode(tree: BinarySearchTree, value: number): void {
   const requestedNode = tree.lookup(value);
   console.log('Find', value + ':', !!requestedNode ? JSON.stringify(requestedNode) : 'Node not found.');
-}
-
-function traverseFrom(node: BNode | null) {
-  if(node === null) return;
-
-  const tree = Object.create({});
-  tree.value = node.getValue();
-  tree.left = node.getLeft() === null ? null : traverseFrom(node.getLeft());
-  tree.right = node.getRight() === null ? null : traverseFrom(node.getRight());
-  return tree;
 }
 
 //---------------------------------------------------------------------
@@ -210,12 +233,24 @@ if (import.meta.main) {
   tree.insert(170);
   tree.insert(15);
   tree.insert(1);
-  console.log('Tree: ', JSON.stringify(traverseFrom(tree.getRoot())));
+  console.log('Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
   tree.remove(20);
   printNode(tree, 4);
   printNode(tree, 17);
   printNode(tree, 40);
   printNode(tree, 170);
+  console.log('Original Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
+  tree.invertTree();
+  console.log('Inverse Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
 
   // RUN: deno run Data-Structures/Trees/BinarySearchTree.ts
 }
+
+// --------------------------- Terminal Output: ---------------------------
+// Tree:  {"value":9,"left":{"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}},"right":{"value":20,"left":{"value":15,"left":null,"right":null},"right":{"value":170,"left":null,"right":null}}}
+// Find 4: {"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}}
+// Find 17: Node not found.
+// Find 40: Node not found.
+// Find 170: {"value":170,"left":{"value":15,"left":null,"right":null},"right":null}
+// Original Tree:  {"value":9,"left":{"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}},"right":{"value":170,"left":{"value":15,"left":null,"right":null},"right":null}}
+// Inverse Tree:  {"value":9,"left":{"value":170,"left":null,"right":{"value":15,"left":null,"right":null}},"right":{"value":4,"left":{"value":6,"left":null,"right":null},"right":{"value":1,"left":null,"right":null}}}
