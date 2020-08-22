@@ -23,6 +23,7 @@
 ### Sorting
 - [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 - [Animated Sorting: Toptal](https://www.toptal.com/developers/sorting-algorithms)
+- [Dancing Algorithms: AlgoRythmics](https://www.youtube.com/user/AlgoRythmics/videos)
 
 ### Recursion
 - [Tail Call Optimization: ES6](https://2ality.com/2015/06/tail-call-optimization.html)

@@ -4,7 +4,7 @@ function swap(pos1: number, pos2: number, inputArr: Array<any>): void {
   inputArr[pos2] = placeholder;
 }
 
-function insertionSort(inputArr: Array<number> | Array<string>): Array<any> {
+function selectionSort(inputArr: Array<number> | Array<string>): Array<any> {
 
   let minValue: number | string;
   let minIndex: number;
@@ -34,9 +34,9 @@ if (import.meta.main) {
   const numbers2  = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0];
   const colors    = ["white", "black", "green", "blue", "orange"];
 
-  console.log(insertionSort(numbers1));
-  console.log(insertionSort(numbers2));
-  console.log(insertionSort(colors));
+  console.log(selectionSort(numbers1));
+  console.log(selectionSort(numbers2));
+  console.log(selectionSort(colors));
 
   // RUN:   deno run Algorithms/Sorting/SelectionSort.ts
 }

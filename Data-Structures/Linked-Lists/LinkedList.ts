@@ -15,6 +15,18 @@ export default class LinkedList<T> {
     return this.length;
   }
 
+  public getHead(): Node<T> | any {
+    return this.head;
+  }
+
+  public getHeadValue(): T | any {
+    return this.head?.getValue();
+  }
+
+  public getTailValue(): T | any {
+    return this.tail?.getValue();
+  }
+
   public isEmpty(): boolean {
     return this.length === 0;
   }
@@ -164,6 +176,20 @@ export default class LinkedList<T> {
     this.head = first;
 
     return true;
+  }
+
+  public toArray(): Array<T> | any {
+    if (this.length <= 0) return null;
+
+    const array = new Array<T>(this.length);
+
+    let currentNode = this.head;
+
+    for (let i=0; !!currentNode; ++i) {
+      array[i] = currentNode.getValue();
+      currentNode = currentNode.getNext();
+    }
+    return array;
   }
 
   public toString(nodesPerGroup?: number): string {
