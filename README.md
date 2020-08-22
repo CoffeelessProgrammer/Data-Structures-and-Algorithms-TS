@@ -19,9 +19,9 @@
 ### Algorithms
 - [X] Recursion
 - [ ] Dynamic Programming
-- [ ] Comparison Sorting
+- [X] Comparison Sorting
   - [X] *Merge Sort*
-  - [ ] *Quick Sort*
+  - [X] *Quick Sort*
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary Search
