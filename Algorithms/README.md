@@ -4,11 +4,11 @@
 - [X] Recursion
 - [ ] Dynamic Programming
 - [ ] Comparison Sorting
-  - [ ] *Merge Sort*
+  - [X] *Merge Sort*
   - [ ] *Quick Sort*
-  - [ ] Bubble Sort
-  - [ ] Selection Sort
-  - [ ] Insertion Sort
+  - [X] Bubble Sort
+  - [X] Selection Sort
+  - [X] Insertion Sort
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary Search
