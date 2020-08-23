@@ -17,9 +17,9 @@ console.log(episode1);
 console.log('------------------------- Episode 2 -------------------------');
 const episode2 = Object.create(episode1);
 
-console.log(episode2);  // While fields don't show on console
-console.log(episode2.name, '—', episode2['characters']); // They are still populated by passed in prototype
-console.log(episode2.introduction()); // Function also exists because episode1 used as prototype
+console.log(episode2);                                      // While fields don't show on console,
+console.log(episode2.name, '—', episode2['characters']);    // they are still populated by passed in prototype.
+console.log(episode2.introduction());                       // Function also exists because episode1 used as prototype.
 
 episode2.name = 'The Avatar Returns';
 episode2['location'] = ['Southern Water Tribe', "Zuko's Ship"];  // Recommended assignment syntax

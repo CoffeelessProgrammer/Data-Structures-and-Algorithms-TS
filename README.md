@@ -21,7 +21,7 @@
 - [ ] Dynamic Programming
 - [X] Comparison Sorting
   - [X] *Merge Sort*
-  - [X] *Quick Sort*
+  - [X] *Quicksort*
 - [ ] Searching
   - [ ] Linear Search
   - [ ] Binary Search

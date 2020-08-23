@@ -5,7 +5,7 @@
 - [ ] Dynamic Programming
 - [X] Comparison Sorting
   - [X] *Merge Sort*
-  - [X] *Quick Sort*
+  - [X] *Quicksort*
   - [X] Bubble Sort
   - [X] Selection Sort
   - [X] Insertion Sort
@@ -17,14 +17,25 @@
 
 ## Resources
 - [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
-- [Unicode Characters: RapidTables](https://www.rapidtables.com/code/text/unicode-characters.html)
+- [Unicode Characters | RapidTables](https://www.rapidtables.com/code/text/unicode-characters.html)
 - [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
 
 ### Sorting
 - [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-- [Animated Sorting: Toptal](https://www.toptal.com/developers/sorting-algorithms)
-- [Dancing Algorithms: AlgoRythmics](https://www.youtube.com/user/AlgoRythmics/videos)
-- [Importance of Stability in Sorting](https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important)
+- [Animated Sorting | Toptal](https://www.toptal.com/developers/sorting-algorithms)
+- [Dancing Algorithms | AlgoRythmics](https://www.youtube.com/user/AlgoRythmics/videos)what-is-stability-in-sorting-algorithms-and-why-is-it-important)
+- [QuickSort vs Heapsort](https://stackoverflow.com/questions/2467751/quicksort-vs-heapsort)
+- [Importance of Stability in Sorting](https://stackoverflow.com/questions/1517793/)
+
+### Most Common Sorts
+- [Merge Sort | Brilliant.org](https://brilliant.org/wiki/merge/)
+- [Quicksort | Brilliant.org](https://brilliant.org/wiki/quick-sort/)
+- [Heap Sort | Brilliant.org](https://brilliant.org/wiki/heap-sort/)
+- [Radix Sort | Brilliant.org](https://brilliant.org/wiki/radix-sort/ "Non-Comparison Sort")
+- [Radix Sort Visualization](https://www.cs.usfca.edu/~galles/visualization/RadixSort.html)
+- [Counting Sort | Brilliant.org](https://brilliant.org/wiki/counting-sort/ "Non-Comparison Sort")
+- [Counting Sort Visualization](https://www.cs.usfca.edu/~galles/visualization/CountingSort.html)
 
 ### Recursion
-- [Tail Call Optimization: ES6](https://2ality.com/2015/06/tail-call-optimization.html)
+- [Recursion | Brilliant.org](https://brilliant.org/wiki/recursion-problem-solving/)
+- [Tail Call Optimization in ES6](https://2ality.com/2015/06/tail-call-optimization.html)
