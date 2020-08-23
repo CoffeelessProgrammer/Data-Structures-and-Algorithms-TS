@@ -20,6 +20,9 @@
 - [Unicode Characters | RapidTables](https://www.rapidtables.com/code/text/unicode-characters.html)
 - [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
 
+### Searching
+- [Space Complexity: BFS vs DFS](https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr)
+
 ### Sorting
 - [Array.prototype.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 - [Animated Sorting | Toptal](https://www.toptal.com/developers/sorting-algorithms)

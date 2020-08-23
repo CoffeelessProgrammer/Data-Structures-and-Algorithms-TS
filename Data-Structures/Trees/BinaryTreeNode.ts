@@ -32,4 +32,14 @@ export default class BinaryTreeNode {
   public getRight(): BinaryTreeNode | any {
     return this.right;
   }
+
+  public hasLeft(): boolean {
+    if (!!this.left) return true;
+    return false;
+  }
+
+  public hasRight(): boolean {
+    if (!!this.right) return true;
+    return false;
+  }
 }

@@ -15,10 +15,6 @@ export default class LinkedList<T> {
     return this.length;
   }
 
-  public getHead(): Node<T> | any {
-    return this.head;
-  }
-
   public getHeadValue(): T | any {
     return this.head?.getValue();
   }

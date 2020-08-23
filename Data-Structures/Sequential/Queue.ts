@@ -40,7 +40,7 @@ export default class Queue<T> {
     return true;
   }
 
-  public dequeue(): T | null {
+  public dequeue(): T | any {
     if (!this.first) return null;             // Edge case: Empty queue
 
     if (this.length === 1) {                  // Edge case: Queue has 1 element, so a dequeue should reset the queue's state

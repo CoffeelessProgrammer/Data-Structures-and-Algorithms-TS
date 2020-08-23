@@ -1,4 +1,5 @@
 import BNode from './BinaryTreeNode.ts';
+import Queue from '../Sequential/Queue.ts';
 
 
 export default class BinarySearchTree {
@@ -205,6 +206,24 @@ export default class BinarySearchTree {
     node.setRight(left);
   }
 
+  public breadthFirstSearch() {
+    if (!this.root) return false;
+
+    let currentNode = this.root;
+    let nodesTraversed = new Array();
+    const nodeQueue: Queue<BNode> = new Queue();
+
+    nodeQueue.enqueue(currentNode);
+
+    while (nodeQueue.getLength() > 0) {
+      currentNode = nodeQueue.dequeue();
+      nodesTraversed.push(currentNode.getValue());
+      if (currentNode.hasLeft()) nodeQueue.enqueue(currentNode.getLeft());
+      if (currentNode.hasRight()) nodeQueue.enqueue(currentNode.getRight());
+    }
+    return nodesTraversed;
+  }
+
   public equalsQuantum(tree: BinarySearchTree): boolean {
     return JSON.stringify(this) === JSON.stringify(tree);
   }
@@ -233,7 +252,8 @@ if (import.meta.main) {
   tree.insert(170);
   tree.insert(15);
   tree.insert(1);
-  console.log('Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
+  console.log(tree.breadthFirstSearch());
+  // console.log('Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
   tree.remove(20);
   printNode(tree, 4);
   printNode(tree, 17);
@@ -243,10 +263,16 @@ if (import.meta.main) {
   tree.invertTree();
   console.log('Inverse Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
 
+  console.log(tree.breadthFirstSearch());
+
   // RUN: deno run Data-Structures/Trees/BinarySearchTree.ts
 }
 
 // --------------------------- Terminal Output: ---------------------------
+// [
+//   9, 4, 20, 1,
+//   6, 15, 170
+// ]
 // Tree:  {"value":9,"left":{"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}},"right":{"value":20,"left":{"value":15,"left":null,"right":null},"right":{"value":170,"left":null,"right":null}}}
 // Find 4: {"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}}
 // Find 17: Node not found.
@@ -254,3 +280,4 @@ if (import.meta.main) {
 // Find 170: {"value":170,"left":{"value":15,"left":null,"right":null},"right":null}
 // Original Tree:  {"value":9,"left":{"value":4,"left":{"value":1,"left":null,"right":null},"right":{"value":6,"left":null,"right":null}},"right":{"value":170,"left":{"value":15,"left":null,"right":null},"right":null}}
 // Inverse Tree:  {"value":9,"left":{"value":170,"left":null,"right":{"value":15,"left":null,"right":null}},"right":{"value":4,"left":{"value":6,"left":null,"right":null},"right":{"value":1,"left":null,"right":null}}}
+// [ 9, 170, 4, 15, 6, 1 ]
