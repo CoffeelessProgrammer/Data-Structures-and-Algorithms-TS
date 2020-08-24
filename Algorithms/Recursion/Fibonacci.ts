@@ -93,6 +93,9 @@ if (import.meta.main) {
 // Fibonacci Iterative 5: 3
 // Fibonacci Iterative 6: 5
 // Fibonacci Iterative 9: 21
+// Fibonacci Iterative 42: 165580141
+// Fibonacci Iterative 50: 7778742049
+// Fibonacci Iterative 100: 218922995834555200000
 
 // ------------ Recursive ------------
 // Input -1 is invalid -_-'
@@ -104,3 +107,4 @@ if (import.meta.main) {
 // Fibonacci Recursive 5: 3
 // Fibonacci Recursive 7: 8
 // Fibonacci Recursive 8: 13
+// Fibonacci Recursive 42: 165580141
