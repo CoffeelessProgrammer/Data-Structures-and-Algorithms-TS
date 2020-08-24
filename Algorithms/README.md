@@ -9,11 +9,11 @@
   - [X] Bubble Sort
   - [X] Selection Sort
   - [X] Insertion Sort
-- [ ] Searching
-  - [ ] Linear Search
+- [X] Searching
+  - [X] Linear Search
   - [ ] Binary Search
-  - [ ] Breadth First Search (BFS)
-  - [ ] Depth First Search (DFS)
+  - [X] Breadth First Search (BFS)
+  - [X] Depth First Search (DFS)
 
 ## Resources
 - [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
@@ -21,6 +21,8 @@
 - [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
 
 ### Searching
+- [Graph Traversals: VisuAlgo](https://visualgo.net/en/dfsbfs)
+- [Tree Traversals: Preorder, Inorder, & Postorder](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
 - [Space Complexity: BFS vs DFS](https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr)
 
 ### Sorting

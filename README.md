@@ -22,10 +22,10 @@
 - [X] Comparison Sorting
   - [X] *Merge Sort*
   - [X] *Quicksort*
-- [ ] Searching
-  - [ ] Linear Search
-  - [ ] Binary Search
-  - [ ] BFS & DFS
+- [X] Searching
+  - [X] Linear Search
+  - [X] Binary Search
+  - [X] BFS & DFS
 
 ## Environment
 - Deno 1.2.1

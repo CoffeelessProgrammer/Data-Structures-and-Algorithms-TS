@@ -206,7 +206,7 @@ export default class BinarySearchTree {
     node.setRight(left);
   }
 
-  public breadthFirstSearch() {
+  public breadthFirstTraversal() {
     if (!this.root) return false;
 
     let currentNode = this.root;
@@ -252,7 +252,7 @@ if (import.meta.main) {
   tree.insert(170);
   tree.insert(15);
   tree.insert(1);
-  console.log(tree.breadthFirstSearch());
+  console.log(tree.breadthFirstTraversal());
   // console.log('Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
   tree.remove(20);
   printNode(tree, 4);
@@ -263,7 +263,7 @@ if (import.meta.main) {
   tree.invertTree();
   console.log('Inverse Tree: ', JSON.stringify(BinarySearchTree.traverse(tree.getRoot())));
 
-  console.log(tree.breadthFirstSearch());
+  console.log(tree.breadthFirstTraversal());
 
   // RUN: deno run Data-Structures/Trees/BinarySearchTree.ts
 }

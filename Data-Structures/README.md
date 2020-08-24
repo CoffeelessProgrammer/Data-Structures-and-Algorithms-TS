@@ -34,6 +34,7 @@
 - [AVL Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
 - [Red-Black Tree Visualization](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
 - [Priority Queue Implementation: GeeksForGeeks](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
+- [Validate a BST: GeeksForGeeks](https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/)
 
 ### Hash Tables
 - [MD5 Hash Generator](http://www.miraclesalad.com/webtools/md5.php)

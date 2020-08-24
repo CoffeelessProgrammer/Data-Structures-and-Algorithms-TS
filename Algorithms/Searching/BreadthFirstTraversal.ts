@@ -2,7 +2,7 @@ import BST from '../../Data-Structures/Trees/BinarySearchTree.ts';
 import Node from '../../Data-Structures/Trees/BinaryTreeNode.ts';
 import Queue from '../../Data-Structures/Sequential/Queue.ts';
 
-function recursiveBFS(nodeQueue: Queue<Node>, nodesTraversed: Array<number>): Array<number> {
+function recursiveBFT(nodeQueue: Queue<Node>, nodesTraversed: Array<number>): Array<number> {
   if (nodeQueue.getLength() === 0) return nodesTraversed;
 
   let currentNode: Node = nodeQueue.dequeue();
@@ -10,10 +10,10 @@ function recursiveBFS(nodeQueue: Queue<Node>, nodesTraversed: Array<number>): Ar
   if (currentNode.hasLeft()) nodeQueue.enqueue(currentNode.getLeft());
   if (currentNode.hasRight()) nodeQueue.enqueue(currentNode.getRight());
 
-  return recursiveBFS(nodeQueue, nodesTraversed);
+  return recursiveBFT(nodeQueue, nodesTraversed);
 }
 
-function breadthFirstSearch(tree: BST) {
+function breadthFirstTraversal(tree: BST) {
   const root = tree.getRoot();
 
   if (!root) return false;
@@ -23,7 +23,7 @@ function breadthFirstSearch(tree: BST) {
 
   nodeQueue.enqueue(root);
 
-  return recursiveBFS(nodeQueue, nodesTraversed);
+  return recursiveBFT(nodeQueue, nodesTraversed);
 }
 
 
@@ -46,9 +46,9 @@ if (import.meta.main) {
   tree.insert(15);
   tree.insert(1);
 
-  console.log(breadthFirstSearch(tree));
+  console.log(breadthFirstTraversal(tree));
 
-  // RUN:   deno run Algorithms/Recursion/BreadthFirstSearch.ts
+  // RUN:   deno run Algorithms/Searching/BreadthFirstTraversal.ts
 }
 
 // --------------------------- Terminal Output: ---------------------------
