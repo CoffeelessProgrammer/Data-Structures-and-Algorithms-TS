@@ -1,7 +1,7 @@
 
 const nemo = ['nemo'];
 const fishColony = ['dory', 'bruce', 'marlin', 'nemo', 'gill', 'bloat', 'nigel', 'squirt', 'darla', 'hank'];
-const largeArr = new Array(10000000).fill('squish');
+const largeArr = new Array(10_000_000).fill('squish');
 
 function findNemo(fishes: Array<string>): string {
   let t0 = performance.now();   // O(1)

@@ -1,4 +1,5 @@
 # Algorithm Time-Complexity Analysis
+
 **Goal:** Understand how the runtime of an algorithm is affected by an increasing number of elements.
 
 ## 5 Rules

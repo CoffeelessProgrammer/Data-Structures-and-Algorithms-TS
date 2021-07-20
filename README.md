@@ -1,43 +1,36 @@
 # Data Structures & Algorithms in TypeScript
 
+## Environment
+- <span title="July 2021">Deno 1.12.0</span>
+- V8 9.2.230.14
+- TypeScript 4.3.2
+
+
 ## Topics Overview
 
 ### Algorithmic Complexity Analysis
 - [X] Big O Notation
-- [X] Time Complexity
-- [X] Space Complexity
+  - [X] Time Complexity
+  - [X] Space Complexity
 
 ### Data Structures
-- [X] Arrays
-- [X] Hash Tables
-- [X] Stacks
-- [X] Queues
-- [X] Linked Lists
 - [X] Trees
 - [X] Graphs
+- [X] Hash Tables
+- [X] Linked Lists
+- [X] Arrays/Stacks/Queues
 
 ### Algorithms
-- [X] Recursion
-- [X] Dynamic Programming
 - [X] Comparison Sorting
   - [X] *Merge Sort*
   - [X] *Quicksort*
 - [X] Searching
-  - [X] Linear Search
-  - [X] Binary Search
+  - [X] Linear & Binary Search
   - [X] BFS & DFS
-
-## Environment
-- Deno 1.2.1
-- V8 8.5.216
-- TypeScript 3.9.2
+- [X] Recursion
+- [X] Dynamic Programming
 
 ## Resources
-- [Comprehensive List of Data Structures](https://en.wikipedia.org/wiki/List_of_data_structures "Wikipedia: DS List")
-- [Visualizing Data Structures & Algorithms](https://visualgo.net/en)
-- [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
-- [Google Coding Interview](https://youtu.be/XKu_SEDAykw)
 - [Roadmap: Core Data Structures & Algorithms](https://coggle.it/diagram/W5E5tqYlrXvFJPsq/t/master-the-interview-click-here-for-course-link "Course and Mindmap by Andrei Neagoie")
-
-### Curated Articles
+- [The Big-O Algorithm Complexity Cheat Sheet](https://www.bigocheatsheet.com/ "Big O Cheat Sheet")
 - [Algorithms & DS – Real Use Cases: PragmaticEngineer](https://blog.pragmaticengineer.com/data-structures-and-algorithms-i-actually-used-day-to-day/)
